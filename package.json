@@ -1,6 +1,6 @@
 {
   "name": "eliteamfetchmod",
-  "version": "1.6.8",
+  "version": "1.7.2",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -13,5 +13,8 @@
   },
   "peerDependencies": {
     "axios": "^0.19.0"
+  },
+  "dependencies": {
+    "cors": "^2.8.5"
   }
 }

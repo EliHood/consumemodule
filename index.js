@@ -1,11 +1,20 @@
 'use strict';
 const axios = require('axios');
+const cors = require('cors');
 /**
  * Makes axios call
  * @param {url} string
  * @param {params} value
  *
 */
+
+var corsOptions = {
+    origin: '*',
+    optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+}
+   
+const ourCors = cors(corsOptions);
+  
 
 axios.interceptors.request.use( function(config){
     config.metadata = {
@@ -27,6 +36,7 @@ axios.interceptors.response.use( function(response){
 module.exports.get = function(url){
     axios.get(url).then( function(res){
         console.log(res.data)
+        console.log(res.status)
         console.log(`response time ${res.duration}`)
     }).catch( function(err) {
         console.log(err)
@@ -34,13 +44,33 @@ module.exports.get = function(url){
 
 }
 
+module.exports.delete = function(url){
+    axios.delete(url)
+        .then( function(res){
+            console.log(res.data);
+            console.log(res.status)
+            console.log(`response time ${res.duration}`)
+        }).catch( function(err){
+            console.log(err);
+        });
+}
 
-
+module.exports.put = function(url, params){
+    axios.put(url, {...params})
+        .then( function(res) {
+                console.log(res.data);
+                console.log(res.status)
+                console.log(`response time ${res.duration}`)
+        }).catch( function(err) {
+            console.log(err)
+        })   
+}
 
 module.exports.post = function(url, params){
     axios.post(url, {...params})
          .then( function(res) {
                 console.log(res.data);
+                console.log(res.status)
                 console.log(`response time ${res.duration}`)
         }).catch( function(err) {
             console.log(err)

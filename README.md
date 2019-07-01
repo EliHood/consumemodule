@@ -25,6 +25,14 @@ consumeModule.get(url);
 consumeModule.post(url, data);
 ```
 
+```diff
+consumeModule.put(url, data);
+```diff
+
+```diff
+consumeModuel.delete(url, data);
+```
+
 ### For Post resquest example use
 https://jsonplaceholder.typicode.com/posts
 
