@@ -22,4 +22,3 @@ consumeModule.get(url);
 
 ```diff
 consumeModule.post(url, data);
-```# consumemodule
