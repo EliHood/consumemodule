@@ -1,0 +1,17 @@
+{
+  "name": "eliteamfetchmod",
+  "version": "1.6.7",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "axios": "^0.19.0"
+  },
+  "peerDependencies": {
+    "axios": "^0.19.0"
+  }
+}
